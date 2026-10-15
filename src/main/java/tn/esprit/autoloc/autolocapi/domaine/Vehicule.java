@@ -3,6 +3,7 @@ package tn.esprit.autoloc.autolocapi.domaine;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -40,6 +41,8 @@ public class Vehicule {
     @ManyToOne(fetch = FetchType.LAZY)
     private Agence agence;
 
+    private BigDecimal tarifJournalier;
+
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -57,5 +60,12 @@ public class Vehicule {
     private List<Maintenance> maintenances = new ArrayList<>();
 
 
+    public BigDecimal getTarifJournalier() {
+        return tarifJournalier;
+    }
 
+
+    public void setTarifJournalier(BigDecimal tarifJournalier) {
+        this.tarifJournalier = tarifJournalier;
+    }
 }

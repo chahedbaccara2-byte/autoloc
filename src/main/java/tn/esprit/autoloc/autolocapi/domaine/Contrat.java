@@ -43,4 +43,7 @@ public class Contrat {
     @JoinColumn(name = "id_reservation")
     private Reservation reservation;
 
+    public long getId() {
+        return idContrat;
+    }
 }
